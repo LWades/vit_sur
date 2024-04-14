@@ -34,6 +34,8 @@ import h5py
 from args import args
 from train import valids, setup, set_seed
 import numpy as np
+import pandas as pd
+
 
 
 logger = logging.getLogger(__name__)
@@ -126,7 +128,19 @@ for p in ps:
     acc = valids(args, model, test_loader)
     accs.append(accs)
     log("p {} acc: {}".format(format(p, '.3f'), acc))
+log("Write to csv...")
+lge = [1 - x for x in accs]
+data = {
+    'physical error rate': ps,
+    'accuracy': accs,
+    'logical error rate': lge
+}
+df = pd.DataFrame(data)
+df.to_csv('{}.csv'.format(args.name), index=False)
+log("Write to csv... Done.")
 log("accs: \n{}".format(accs))
 log("Eval... Done.")
 # python3 eval_plot.py --c_type sur --d 11 --name sur-11-0.10-1e7
 # python3 eval_plot.py --name sur-11-0.10-1e7 --dataset sur --model_type Sur_11 --d 11 --p 0.10 --img_size 21 --eval_seed 1 --fp16 --fp16_opt_level O2
+# nohup python3 eval_plot.py --name sur-3-0.10-1x1-1e7 --dataset sur --model_type Sur_3 --d 3 --p 0.10 --img_size 5 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep01.log &
+# nohup python3 eval_plot.py --name sur-3-0.10-1x1-1e7 --dataset sur --model_type Sur_3 --d 3 --p 0.10 --img_size 5 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep01.log &
