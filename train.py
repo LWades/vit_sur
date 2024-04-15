@@ -522,3 +522,5 @@ if __name__ == "__main__":
 
 # nohup python3 train.py --name sur-9-0.10-1x1-1e7 --dataset sur --model_type Sur_9 --d 9 --p 0.10 --epoch 20 --img_size 17 --gpu 0 --seed 0 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/sur-9-0.10-1x1-1e7.log &
 # nohup python3 train.py --name sur-9-0.10-1x1-1e7-true --dataset sur --model_type Sur_9 --d 9 --p 0.10 --epoch 20 --img_size 17 --gpu 0 --seed 0 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/sur-9-0.10-1x1-1e7-true.log &
+# nohup python3 train.py --name sur-9-0.10-1x1-1e7-rt --dataset sur --model_type Sur_9 --d 9 --p 0.10 --epoch 20 --img_size 17 --gpu 0 --seed 0 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/sur-9-0.10-1x1-1e7-rt.log &
+
