@@ -51,6 +51,7 @@ def get_sur5_config():
     """Returns the surface code(L=5) configuration."""
     config = ml_collections.ConfigDict()
     config.patches = ml_collections.ConfigDict({'size': (1, 1)})  # 这里要改, 16->1
+    # config.patches = ml_collections.ConfigDict({'size': (1, 1)})  # 这里要改, 16->1
     config.hidden_size = 768
     config.transformer = ml_collections.ConfigDict()
     config.transformer.mlp_dim = 3072
@@ -82,7 +83,8 @@ def get_sur7_config():
 def get_sur9_config():
     """Returns the surface code(L=7) configuration."""
     config = ml_collections.ConfigDict()
-    config.patches = ml_collections.ConfigDict({'size': (3, 3)})  # 这里要改, 16->1
+    # config.patches = ml_collections.ConfigDict({'size': (3, 3)})  # 这里要改, 16->1
+    config.patches = ml_collections.ConfigDict({'size': (1, 1)})  # 这里要改, 16->1
     # config.patches = ml_collections.ConfigDict({'size': (2, 2)})  # 这里要改, 16->1
     config.hidden_size = 768
     config.transformer = ml_collections.ConfigDict()

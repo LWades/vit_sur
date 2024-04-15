@@ -128,12 +128,12 @@ def get_loader(args):
     train_loader = DataLoader(trainset,
                               sampler=train_sampler,
                               batch_size=args.train_batch_size,
-                              num_workers=2,
+                              num_workers=1,
                               pin_memory=True)
     test_loader = DataLoader(testset,
                              sampler=test_sampler,
                              batch_size=args.eval_batch_size,
-                             num_workers=2,
+                             num_workers=1,
                              pin_memory=True) if testset is not None else None
 
     log("train_loader.dataset type: {}".format(type(train_loader.dataset)))

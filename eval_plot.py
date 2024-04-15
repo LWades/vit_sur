@@ -120,13 +120,13 @@ for p in ps:
     log("test_loader.dataset type: {}".format(type(test_loader.dataset)))
     log("test_loader.dataset: {}".format(test_loader.dataset))
 
-    model_name = 'sur-{}-{}-1e7_checkpoint.bin'.format(args.d, format(0.10, '.2f'))
+    model_name = '{}_checkpoint.bin'.format(args.name)
     log("model: {}".format(model_name))
     model.load_state_dict(torch.load(pwd_model + model_name))
     model.eval()
 
     acc = valids(args, model, test_loader)
-    accs.append(accs)
+    accs.append(acc)
     log("p {} acc: {}".format(format(p, '.3f'), acc))
 log("Write to csv...")
 lge = [1 - x for x in accs]
@@ -144,3 +144,7 @@ log("Eval... Done.")
 # python3 eval_plot.py --name sur-11-0.10-1e7 --dataset sur --model_type Sur_11 --d 11 --p 0.10 --img_size 21 --eval_seed 1 --fp16 --fp16_opt_level O2
 # nohup python3 eval_plot.py --name sur-3-0.10-1x1-1e7 --dataset sur --model_type Sur_3 --d 3 --p 0.10 --img_size 5 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep01.log &
 # nohup python3 eval_plot.py --name sur-3-0.10-1x1-1e7 --dataset sur --model_type Sur_3 --d 3 --p 0.10 --img_size 5 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep01.log &
+# nohup python3 eval_plot.py --name sur-5-0.10-1x1-1e7 --dataset sur --model_type Sur_5 --d 5 --p 0.10 --img_size 9 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep02.log &
+# nohup python3 eval_plot.py --name sur-5-0.10-1e7 --dataset sur --model_type Sur_5 --d 5 --p 0.10 --img_size 9 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep03.log &
+# nohup python3 eval_plot.py --name sur-5-0.09-1e7 --dataset sur --model_type Sur_5 --d 5 --p 0.10 --img_size 9 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep04.log &
+# nohup python3 eval_plot.py --name sur-7-0.11-1x1-1e7 --dataset sur --model_type Sur_7 --d 7 --p 0.11 --img_size 13 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep05.log &
