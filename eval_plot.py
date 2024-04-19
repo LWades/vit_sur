@@ -148,3 +148,5 @@ log("Eval... Done.")
 # nohup python3 eval_plot.py --name sur-5-0.10-1e7 --dataset sur --model_type Sur_5 --d 5 --p 0.10 --img_size 9 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep03.log &
 # nohup python3 eval_plot.py --name sur-5-0.09-1e7 --dataset sur --model_type Sur_5 --d 5 --p 0.10 --img_size 9 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep04.log &
 # nohup python3 eval_plot.py --name sur-7-0.11-1x1-1e7 --dataset sur --model_type Sur_7 --d 7 --p 0.11 --img_size 13 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep05.log &
+# nohup python3 eval_plot.py --name sur-7-0.11-1x1-1e7 --dataset sur --model_type Sur_7 --d 5 --p 0.10 --img_size 13 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep09.log &
+# nohup python3 eval_plot.py --name sur-9-0.10-1x1-1e7 --dataset sur --model_type Sur_9 --d 9 --p 0.10 --img_size 17 --eval_seed 1 --fp16 --fp16_opt_level O2 > logs/ep10.log &
